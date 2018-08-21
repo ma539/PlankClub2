@@ -1,0 +1,12 @@
+<h2>Student Info:</h2>
+  Name: <%= @student.name %>
+  <br>
+  Mod: <%= @student.mod  %>
+  <% @student.planks do |plank| %>
+  <li>Planks: <%= plank.name %></li>
+  <% end %>
+<h2>Edit User:</h2>
+<h2>Delete User:</h2>
+<h2>Log New Plank Time:</h2>
+<h2>Edit Plank Time:</h2>
+<h2>Delete Plank Time:</h2>

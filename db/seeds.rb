@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+one = Student.create(name: "Masud", mod: 2)
+two = Student.create(name: "Derick", mod: 2)
+three = Student.create(name: "Vadim", mod: 1)
+four = Student.create(name: "Gina", mod: 1)
+five = Student.create(name: "Tito", mod: 2)
+
+onee = Plank.create(planktype: "High Plank", duration: 2.35)
+twoo = Plank.create(planktype: "Low Plank", duration: 3.00)
+threee = Plank.create(planktype: "Knee Plank", duration: 4.12)
+fourr = Plank.create(planktype: "Side Plank", duration: 1.54)
+fivee = Plank.create(planktype: "Forever Plank", duration: 5.00)
+
+oone = StudentPlank.create(student: one, plank: onee)
+ttwo = StudentPlank.create(student: two, plank: twoo)
+tthree = StudentPlank.create(student: three, plank: fourr)
+ffour = StudentPlank.create(student: four, plank: threee)
+ffive = StudentPlank.create(student: five, plank: fivee)
+ssix = StudentPlank.create(student: one, plank: twoo)
+sseven = StudentPlank.create(student: three, plank: onee)
+eeight = StudentPlank.create(student: two, plank: fourr)
+nnine = StudentPlank.create(student: four, plank: threee)

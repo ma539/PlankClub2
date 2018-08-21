@@ -1,0 +1,8 @@
+<h2>List of Planks:</h2>
+
+<ul>
+  <% @planks.each do |plank| %>
+  <li> <%= link_to plank.planktype, plank_path(plank) %></li>
+  <br>
+  <% end %>
+</ul>

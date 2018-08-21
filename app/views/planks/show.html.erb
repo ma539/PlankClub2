@@ -1,0 +1,8 @@
+<h2>Plank Info:</h2>
+
+Type: <%= @plank.planktype %>
+<hr>
+<% @plank.students.each do |student| %>
+Student: <%= student.name  %>
+-- Time in Minutes: <%= @plank.duration %><br>
+<% end %>
