@@ -4,6 +4,7 @@ class CreateStudentPlanks < ActiveRecord::Migration[5.2]
       t.integer :student_id
       t.integer :plank_id
       t.float :duration
+
       t.timestamps
     end
   end
