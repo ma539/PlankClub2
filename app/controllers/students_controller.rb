@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @student_plank = [StudentPlank.find_by(student: @student)]
   end
 
   def new
@@ -22,15 +23,22 @@ class StudentsController < ApplicationController
   end
 
   def edit
-
+    @student = Student.find(params[:id])
   end
 
   def update
-
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      redirect_to student_path(@student)
+    else
+      render :edit
+    end
   end
 
-  def delete
-
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to students_path
   end
 
   private

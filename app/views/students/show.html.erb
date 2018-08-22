@@ -1,12 +1,16 @@
 <h2>Student Info:</h2>
-  Name: <%= @student.name %>
-  <br>
-  Mod: <%= @student.mod  %>
-  <% @student.planks do |plank| %>
-  <li>Planks: <%= plank.name %></li>
+Name: <%= @student.name %>
+<br>
+Mod: <%= @student.mod  %><br>
+Planks Accomplished: <br>
+<ul>
+  <% planktypes = @student.student_planks.each do |studentPlank| %>
+    <li><%= studentPlank.info %> <%= link_to "Edit Plank",
+    edited_plank_path(@student, studentPlank) %> -- <%= link_to "Delete Plank",
+    deleted_plank_path(@student, studentPlank), method: :delete, data: { confirm: 'Are you sure?' }  %></li>
   <% end %>
-<h2>Edit User:</h2>
-<h2>Delete User:</h2>
-<h2>Log New Plank Time:</h2>
-<h2>Edit Plank Time:</h2>
-<h2>Delete Plank Time:</h2>
+</ul>
+<h3><%= link_to "Log New Plank", new_student_plank_path(@student) %> </h3>
+<h3><%= link_to "Edit Student", edit_student_path(@student) %></h3>
+<h3><%= link_to "Delete Student",
+student_path(@student), method: :delete, data: { confirm: 'Are you sure?' } %></h3>

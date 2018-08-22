@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_191243) do
 
   create_table "planks", force: :cascade do |t|
     t.string "planktype"
-    t.float "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_191243) do
   create_table "student_planks", force: :cascade do |t|
     t.integer "student_id"
     t.integer "plank_id"
+    t.float "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
